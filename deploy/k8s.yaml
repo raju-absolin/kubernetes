@@ -14,8 +14,8 @@ spec:
         spec:
             containers:
                 - name: example-api
-                  imagePullPolicy: Never
-                  image: nginx
+                  imagePullPolicy: Always
+                  image: nginx:latest
                   resources:
                       limits:
                           cpu: 50m
