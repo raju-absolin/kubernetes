@@ -13,9 +13,9 @@ jobs:
       uses: medyagh/setup-minikube@latest
     - name: Try the cluster!
       run: kubectl get pods -A
-    - name: Build image
-      run: |
-        minikube image build -t local/devex:v1 .        
+    # - name: Build image
+    #   run: |
+    #     minikube image build -t local/devex:v1 .
     - name: Deploy to minikube
       run:
         kubectl apply -f deploy/k8s.yaml &&
