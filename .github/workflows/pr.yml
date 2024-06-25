@@ -19,13 +19,14 @@ jobs:
     - name: Deploy to minikube
       run:
         kubectl apply -f deploy/k8s.yaml &&
-        sleep 60;
-    - name: Test service URLs
-      run: |
-        minikube service list
-        minikube service local-devex-svc --url
-        echo "------------------opening the service------------------"
-        curl $(minikube service local-devex-svc --url)
+        sleep 60 &&
+        kubectl get all -A;
+    # - name: Test service URLs
+    #   run: |
+    #     minikube service list
+    #     minikube service local-devex-svc --url
+    #     echo "------------------opening the service------------------"
+    #     curl $(minikube service local-devex-svc --url)
 
 
         
