@@ -19,7 +19,7 @@ jobs:
     - name: Deploy to minikube
       run:
         kubectl apply -f deploy/k8s.yaml
-        kubectl wait --for=condition=ready pod -l app=local-devex
+        sleep 60
     - name: Test service URLs
       run: |
         minikube service list
