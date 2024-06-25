@@ -18,8 +18,8 @@ jobs:
         minikube image build -t local/devex:v1 .        
     - name: Deploy to minikube
       run:
-        kubectl apply -f deploy/k8s.yaml
-        sleep 60
+        kubectl apply -f deploy/k8s.yaml;
+        sleep 60;
     - name: Test service URLs
       run: |
         minikube service list
